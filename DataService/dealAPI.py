@@ -8,7 +8,6 @@ class ApiQuery():
         self.yelpApi = YelpAPI(sys.argv[2])
         
 
-    def getLunch(self, term):
-        
-        response = self.yelpApi.search_query(term=term, location='colorado spring, co', sort_by='rating', limit=1)
+    def getLunch(self, term, limit):
+        response = self.yelpApi.search_query(term=term, location='colorado spring, co', sort_by='rating', limit=limit)
         return response

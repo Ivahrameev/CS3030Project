@@ -13,7 +13,7 @@ def test():
     message += response['businesses'][0]['name']
     message += '\nA ' + response['businesses'][0]['categories'][0]['title'] + ' restaurant' 
     message += '\n Address: ' + response['businesses'][0]['location']['display_address'][0] + response['businesses'][0]['location']['display_address'][1]
-    myObj.sendEmail('cs3030pytester@gmail.com', message)
+    myObj.sendEmail('cs3030pytester@gmail.com', message, 1)
     myObj.end()
 
 
