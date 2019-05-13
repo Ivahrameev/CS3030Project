@@ -2,10 +2,10 @@
 
 import json
 
+data = {}
+data['Users'] = []
+
 class User():
-	
-        data = {}
-        data['Users'] = []
 	
 	def __init__(self, username, email, notificationTime, zipCode, preference):
 		self.username = username
