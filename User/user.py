@@ -3,14 +3,16 @@
 import json
 
 class User():
+	
+        data = {}
+        data['Users'] = []
+	
 	def __init__(self, username, email, notificationTime, zipCode, preference):
 		self.username = username
 		self.email = email
 		self.notificationTime = notificationTime
 		self.zipCode = zipCode
 		self.preference = preference
-		data = {}
-                data['Users'] = []
 		
        #this function writes a given user to a json file
        def writeUserToJson(self):
