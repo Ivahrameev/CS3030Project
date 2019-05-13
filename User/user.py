@@ -8,7 +8,7 @@ class User():
 		self.zipCode = zipCode
 		self.preference = preference
 		
-		
+       #this function writes a given user to a json file
        def writeUserToJson(self):
         data['Users'].append({
          'username' : self.username,
@@ -20,6 +20,7 @@ class User():
         with open ('userList.txt', 'w') as outfile:
         json.dump(data, outfile, sort_keys=True, indent=4)
 	
+       #returns a list with all the users
        def getUserFromJson(self):
         pulledUser = []
         with open('userList.txt') as json_file:
