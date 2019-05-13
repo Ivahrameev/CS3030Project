@@ -19,3 +19,11 @@ class User():
         })  
         with open ('userList.txt', 'w') as outfile:
         json.dump(data, outfile, sort_keys=True, indent=4)
+	
+       def getUserFromJson(self):
+        pulledUser = []
+        with open('userList.txt') as json_file:
+         data = json.load(json_file)
+         for person in data['Users']:
+          pulledUser.append({'username':person['username'], 'email':person['email'], 'notification time':person['notification time'], 'zipcode':person['zipcode'], 'preference':person['preference'] })
+         return pulledUser
