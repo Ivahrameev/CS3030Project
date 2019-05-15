@@ -4,6 +4,8 @@ from pprint import pprint
 from EmailService.emailService import EmailService
 from DataService.dealAPI import ApiQuery
 from User.user import User
+from User.user import getUserIdFromJson
+
 
 def test():
     myObj = EmailService()
@@ -35,10 +37,11 @@ def instuctionChecker():
         time.sleep(60) # Only check once a minute
 
 def main():
-    userList = [] # add code to read all users
-    # FAKE USER FOR TESTING
-    userList.append(User('Test', 'cs3030pytester@gmail.com', '23:17', '80104', 'lunch'))
+    
     while(True):
+        # Update user list each time. 
+        userList = getUserIdFromJson()
+        print(userList)
         # Iterate over the users 
         currentTime = datetime.datetime.now()
         hour, minute = currentTime.hour, currentTime.minute
