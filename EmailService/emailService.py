@@ -35,17 +35,24 @@ class EmailService():
 
     # Check email if there is a request for a new user
     def checkEmailNewUser(self):
-        self.imapObj.noop()
+        self.imapObj.noop() # "refresh" for inbox to see new emails
         UIDs = self.imapObj.search(['SUBJECT', 'New user', 'UNSEEN']) # Find the emails
+        # If no new emails, don't make a user
         if len(UIDs) == 0:
             return None
+
+        # Get the last message
         lastUID = UIDs[len(UIDs)-1]
+        # Get the last message get the information from it
         rawMessages= self.imapObj.fetch(lastUID, ['BODY[]', 'FLAGS'])
         message = pyzmail.PyzMessage.factory(rawMessages[lastUID][b'BODY[]'])
         body = message.text_part.get_payload().decode("utf-8")
         userinfo = body.splitlines()
+
+        # Return a new user to add the list.
         return User(userinfo[0].strip("Username: "), message.get_addresses('from')[0][1], userinfo[2].strip("Time: "), userinfo[3].strip("Zip Code: "), userinfo[4].strip("Preference: "))
 
+    # TODO: at end of execution (when command comes) shut everything down
     def end(self):
         self.smtpObj.quit()
         self.imapObj.logout()

@@ -1,9 +1,13 @@
 # This is where the user object will go
 import json, os, random
 
+# File path, since this code is run outside of this directory, it needs to be updated. 
 filePath = os.path.join(os.getcwd(), 'User', 'UserList.txt')
+
+# User data
 data = {}
 data['Users'] = []
+# User class, creates users and adds users to list stored in text file
 class User():
     def __init__(self, username, email, notificationTime, zipCode, preference):
         self.username = username
@@ -42,25 +46,11 @@ class User():
                                  random.choice(listChoice),
                                  random.choice(divisorList),
                                  random.choice(divisorList)))
-     #returns a very random integer that is generated from four other numbers
+        #returns a very random integer that is generated from four other numbers
         return int(randomNumber(random.choice(number), 
                              random.choice(number), 
                              random.choice(divisorList),
                              random.choice(divisorList)))
-        
-
-    #this function writes a given user to a json file
-    #does not write user with their ID, used to create original 'userList.txt' file
-    def writeUserToJson(self):
-        data['Users'].append({
-        'username' : self.username,
-        'email' : self.email,
-        'notification time' : self.notificationTime,
-        'zipcode' : self.zipCode,
-        'preference' : self.preference
-        })  
-        with open ('userList.txt', 'w') as outfile:
-            json.dump(data, outfile, sort_keys=True, indent=4)
       
     
     def writeUserIdToJsonDecorator(func):
@@ -75,6 +65,7 @@ class User():
     #id used for sorting and to prevent old data from being overwritten
     @writeUserIdToJsonDecorator
     def writeUserIdToJson(self):
+        global data
         data['Users'].append({self.uniqueId : {
         'username' : self.username, 
         'email' : self.email, 
@@ -101,6 +92,7 @@ class User():
 #returns a dictionary of the user base
 #will work with both the old and new 'UserList.txt' file
 def getUserIdFromJson():
+    global data
     with open(filePath) as json_file:
         data = json.load(json_file)
     return data['Users']
