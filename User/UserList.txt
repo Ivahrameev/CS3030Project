@@ -1,0 +1,185 @@
+{
+    "Users": [
+        "UserId",
+        {
+            "890378": {
+                "email": "tom.holland@gmail.com",
+                "notification time": "0800",
+                "preference": "bakeries",
+                "username": "Tom Holland",
+                "zipcode": "80022"
+            }
+        },
+        {
+            "981678611": {
+                "email": "ddivich@uccs.edu",
+                "notification time": "1800",
+                "preference": "beer_and_wine",
+                "username": "Dillon Divich",
+                "zipcode": "80920"
+            }
+        },
+        {
+            "2051166": {
+                "email": "ivahrame@uccs.edu",
+                "notification time": "1000",
+                "preference": "bagels",
+                "username": "Igor Vahrameev",
+                "zipcode": "80919"
+            }
+        },
+        {
+            "82901": {
+                "email": "liam.neeson@gmail.com",
+                "notification time": "0200",
+                "preference": "desserts",
+                "username": "Liam Neeson",
+                "zipcode": "80019"
+            }
+        },
+        {
+            "55715": {
+                "email": "chemsworth@gmail.com",
+                "notification time": "0900",
+                "preference": "donuts",
+                "username": "Chris Hemsworth",
+                "zipcode": "80024"
+            }
+        },
+        {
+            "281628209": {
+                "email": "rdj@gmail.com",
+                "notification time": "1200",
+                "preference": "empanadas",
+                "username": "Robert Downey Jr.",
+                "zipcode": "80030"
+            }
+        },
+        {
+            "8916461": {
+                "email": "blackwidow@yahoo.com",
+                "notification time": "1230",
+                "preference": "torshi",
+                "username": "Scarlett Johansson",
+                "zipcode": "80031"
+            }
+        },
+        {
+            "7924696652": {
+                "email": "cevans@yahoo.com",
+                "notification time": "1430",
+                "preference": "wineries",
+                "username": "Chris Evans",
+                "zipcode": "80035"
+            }
+        },
+        {
+            "17987": {
+                "email": "liz.olsen@gmail.com",
+                "notification time": "1400",
+                "preference": "tortillas",
+                "username": "Elizabeth Olsen",
+                "zipcode": "80042"
+            }
+        },
+        {
+            "83839": {
+                "email": "vers@gmail.com",
+                "notification time": "1200",
+                "preference": "honey",
+                "username": "Brie Larson",
+                "zipcode": "80040"
+            }
+        },
+        {
+            "29483": {
+                "email": "markr13@yahoo.com",
+                "notification time": "1230",
+                "preference": "gelato",
+                "username": "Mark Ruffalo",
+                "zipcode": "80036"
+            }
+        },
+        {
+            "1167515": {
+                "email": "jeremy.renner@yahoo.com",
+                "notification time": "1015",
+                "preference": "fishmonger",
+                "username": "Jeremy Renner",
+                "zipcode": "80011"
+            }
+        },
+        {
+            "8565241472": {
+                "email": "bigfurryrug@yahoo.com",
+                "notification time": "1200",
+                "preference": "pretzels",
+                "username": "Peter Mayhew",
+                "zipcode": "80019"
+            }
+        },
+        {
+            "8997104464": {
+                "email": "luke.skywalker@yahoo.com",
+                "notification time": "1445",
+                "preference": "distilleries",
+                "username": "Mark Hamill",
+                "zipcode": "80030"
+            }
+        },
+        {
+            "464915491": {
+                "email": "antdan32@yahoo.com",
+                "notification time": "1300",
+                "preference": "meaderies",
+                "username": "Anthony Daniels",
+                "zipcode": "80031"
+            }
+        },
+        {
+            "4417350450": {
+                "email": "dprowse@yahoo.com",
+                "notification time": "1400",
+                "preference": "panzerotti",
+                "username": "David Prowse",
+                "zipcode": "80036"
+            }
+        },
+        {
+            "89093553": {
+                "email": "cs3030pytester@gmail.com",
+                "notification time": "1000",
+                "preference": "bubbletea",
+                "username": "Kenny Baker",
+                "zipcode": "80035"
+            }
+        },
+        {
+            "9173072": {
+                "email": "cs3030pytester@gmail.com",
+                "notification time": "0930",
+                "preference": "wineries",
+                "username": "Carrie Fisher",
+                "zipcode": "80024"
+            }
+        },
+        {
+            "1281740075": {
+                "email": "cs3030pytester@gmail.com",
+                "notification time": "0800",
+                "preference": "tortillas",
+                "username": "Denis Lawson",
+                "zipcode": "80022"
+            }
+        },
+        {
+            "196103375": {
+                "email": "alan.harris@gmail.com",
+                "notification time": "1700",
+                "preference": "smokehouse",
+                "username": "Alan Harris",
+                "zipcode": "80011"
+            }
+        }
+    ]
+}
