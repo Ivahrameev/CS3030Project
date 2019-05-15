@@ -51,3 +51,10 @@ class User():
          for person in data['Users']:
           pulledUser.append({'username':person['username'], 'email':person['email'], 'notification time':person['notification time'], 'zipcode':person['zipcode'], 'preference':person['preference'] })
          return pulledUser
+
+#returns a dictionary of the user base
+#will work with both the old and new 'UserList.txt' file
+def getUserIdFromJson():
+ with open('UserList.txt') as json_file:
+  data = json.load(json_file)
+ return data['Users']
