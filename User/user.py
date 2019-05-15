@@ -16,8 +16,15 @@ class User():
 	 self.zipCode = zipCode
 	 self.preference = preference
 	 self.uniqueId = self.generateUniqueId()
+		
+        def generateUniqueIdDecorator(func):
+         def wrapper(self):
+          print("Generating a unique User Id for [" + self.username + "]...")
+          print("...Unique User Id successfully generated\n")
+          return func(self)
+         return wrapper
 	   
-	
+	@generateUniqueIdDecorator
         def generateUniqueId(self):
          random.seed()
          numberList = [] 
