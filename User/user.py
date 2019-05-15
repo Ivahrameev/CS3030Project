@@ -21,7 +21,6 @@ class User():
         def generateUniqueIdDecorator(func):
          def wrapper(self):
           print("Generating a unique User Id for [" + self.username + "]...")
-          print("...Unique User Id successfully generated\n")
           return func(self)
          return wrapper
 	   
