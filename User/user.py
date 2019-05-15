@@ -3,7 +3,7 @@ import json, os, random
 
 filePath = os.path.join(os.getcwd(), 'User', 'UserList.txt')
 data = {}
-data['Users'] = ['UserId']
+data['Users'] = []
 class User():
     def __init__(self, username, email, notificationTime, zipCode, preference):
         self.username = username
