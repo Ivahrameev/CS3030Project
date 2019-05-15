@@ -67,8 +67,17 @@ class User():
         json.dump(data, outfile, sort_keys=True, indent=4)
           
 		
+       def writeUserIdToJsonDecorator(func):
+        def wrapper(self):
+         print("Writing user [" + self.username + "] to file with ID: " + str(self.uniqueId) +"...")
+         func(self)
+         print("...User [" + self.username + "] successfully written to file\n")
+        return wrapper 
+       	
+	
        #writes the given user to a json file with a unique user id
        #id used for sorting and to prevent old data from being overwritten
+       @writeUserIdToJsonDecorator
        def writeUserIdToJson(self):
         data['Users'].append({self.uniqueId : {
          'username' : self.username, 
