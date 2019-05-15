@@ -36,8 +36,11 @@ class EmailService():
     # Check email if there is a request for a new user
     def checkEmailNewUser(self):
         UIDs = self.imapObj.search(['SUBJECT', 'New user', 'UNSEEN']) # Find the emails
+        print(UIDs)
         if len(UIDs) == 0:
             return None
+
+        print('Email found')
         lastUID = UIDs[len(UIDs)-1]
         rawMessages= self.imapObj.fetch(lastUID, ['BODY[]', 'FLAGS'])
         message = pyzmail.PyzMessage.factory(rawMessages[lastUID][b'BODY[]'])

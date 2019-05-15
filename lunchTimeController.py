@@ -6,52 +6,41 @@ from DataService.dealAPI import ApiQuery
 from User.user import User
 from User.user import getUserIdFromJson
 
-
-def test():
-    myObj = EmailService()
-    apiObj = ApiQuery()
-    response = apiObj.getData('Lunch', '80104', 1)
-    #print(isinstance(response, dict))
-    message = '\n'
-    message += response['businesses'][0]['name']
-    message += '\nA ' + response['businesses'][0]['categories'][0]['title'] + ' restaurant' 
-    message += '\n Address: ' + response['businesses'][0]['location']['display_address'][0] + response['businesses'][0]['location']['display_address'][1]
-    #myObj.sendEmail('cs3030pytester@gmail.com', message, 1)
-    #myObj.end()
-    #user = myObj.checkEmailNewUser()
-    #print(user.__dict__)
-    print(message)
-
-
-#test()
-
 emailService = EmailService()
 dataService = ApiQuery()
 
 def instuctionChecker():
+    i = 1
     while(True):
+        print(f'Loop checker {i}')
         user = emailService.checkEmailNewUser()
         if user != None:
-            pass # Code to write new user to data
-
+            print('Adding user!')
+            user.writeUserIdToJson()
         time.sleep(60) # Only check once a minute
+        i += 1
+
 
 def main():
-    
+    i = 1
     while(True):
+        print(f'Loop main {i}')
         # Update user list each time. 
         userList = getUserIdFromJson()
-        print(userList)
         # Iterate over the users 
         currentTime = datetime.datetime.now()
         hour, minute = currentTime.hour, currentTime.minute
         for user in userList:
-            if user.notificationTime == f'{hour}:{minute}':
-                response = dataService.getData(user.preference, user.zipCode, 3)
+            for key in user.keys():
+                tempKey = key
+            currentUser = user[tempKey]
+            if currentUser['notification time'] == f'{hour}{minute}':
+                response = dataService.getData(currentUser['preference'], currentUser['zipcode'], 3)
                 message = dataService.makeMessage(response, 3)
-                emailService.sendEmail(user.email, message)
+                emailService.sendEmail(currentUser['email'], message)
         time.sleep(60)
-
+        i += 1
+    print('Main ending...')
 
 mainThread = threading.Thread(target=main)
 checkerThread = threading.Thread(target=instuctionChecker)

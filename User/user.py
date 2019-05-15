@@ -1,8 +1,7 @@
 # This is where the user object will go
+import json, os, random
 
-import json
-import random
-
+filePath = os.path.join(os.getcwd(), 'User', 'UserList.txt')
 data = {}
 data['Users'] = ['UserId']
 class User():
@@ -83,7 +82,7 @@ class User():
         'zipcode' : self.zipCode, 
         'preference' : self.preference}
         })
-        with open ('UserList.txt', 'w') as outfile:
+        with open (filePath, 'w') as outfile:
             json.dump(data, outfile, sort_keys=True, indent=4)   
     
     
@@ -102,6 +101,6 @@ class User():
 #returns a dictionary of the user base
 #will work with both the old and new 'UserList.txt' file
 def getUserIdFromJson():
-    with open('UserList.txt') as json_file:
+    with open(filePath) as json_file:
         data = json.load(json_file)
     return data['Users']
