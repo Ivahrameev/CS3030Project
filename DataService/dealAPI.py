@@ -19,6 +19,6 @@ class ApiQuery():
             message += '\n'
             message += response['businesses'][i]['name']
             message += '\nA ' + response['businesses'][i]['categories'][0]['title'] + ' restaurant' 
-            message += '\n Address: ' + response['businesses'][i]['location']['display_address'][0] + response['businesses'][0]['location']['display_address'][1]
+            message += '\nAddress: ' + response['businesses'][i]['location']['display_address'][0] + ' ' + response['businesses'][0]['location']['display_address'][1]
             message += '\n'
         return message

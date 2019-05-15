@@ -12,9 +12,7 @@ dataService = ApiQuery()
 
 # This method is the  email checker, who adds the new users to the file. 
 def instuctionChecker():
-    i = 1
     while(True):
-        print(f'Loop checker {i}')
         user = emailService.checkEmailNewUser()
         if user != None:
             print('Adding user!')

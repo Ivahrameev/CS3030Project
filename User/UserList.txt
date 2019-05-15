@@ -188,6 +188,33 @@
                 "username": "test",
                 "zipcode": "00000"
             }
+        },
+        {
+            "941303989": {
+                "email": "cs3030pytester@gmail.com",
+                "notification time": "1235",
+                "preference": "lunch",
+                "username": "test",
+                "zipcode": "00000"
+            }
+        },
+        {
+            "8720971": {
+                "email": "ivahrame@uccs.edu",
+                "notification time": "1239",
+                "preference": "lunch",
+                "username": "test",
+                "zipcode": "00000"
+            }
+        },
+        {
+            "310725970": {
+                "email": "ivahrame@uccs.edu",
+                "notification time": "1246",
+                "preference": "di",
+                "username": "test",
+                "zipcode": "80104"
+            }
         }
     ]
 }
