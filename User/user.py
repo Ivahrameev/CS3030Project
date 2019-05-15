@@ -17,6 +17,7 @@ class User():
 	 self.preference = preference
 	 self.uniqueId = self.generateUniqueId()
 		
+		
         def generateUniqueIdDecorator(func):
          def wrapper(self):
           print("Generating a unique User Id for [" + self.username + "]...")
@@ -24,6 +25,7 @@ class User():
           return func(self)
          return wrapper
 	   
+	
 	@generateUniqueIdDecorator
         def generateUniqueId(self):
          random.seed()
